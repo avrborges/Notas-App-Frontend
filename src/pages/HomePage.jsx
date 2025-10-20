@@ -26,6 +26,10 @@ const HomePage = () => {
     obtenerNotas();
   },[]);
 
+  const handleDelete = (id) => {
+    setNotas((prevNotas) => prevNotas.filter((nota) => nota._id !== id));
+  };
+
   if(loading){
     return <span>Cargando</span>
   }
@@ -37,8 +41,9 @@ const HomePage = () => {
         <CardNote key={nota._id}
         titulo={nota.titulo}
         contenido={nota.contenido}
-        id={nota.id}
+        id={nota._id}
         date={formatData(nota.createdAt)}
+        onDelete={handleDelete}
         />
       ))}
     </div>
