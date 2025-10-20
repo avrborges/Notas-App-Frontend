@@ -45,7 +45,7 @@ const deleteNote = async () => {
         <p>{contenido}</p>
         <span>{date}</span>
         <div className="card-actions justify-end mt-9">
-        <button className="btn btn-primary">Editar</button>
+        <button className="btn btn-primary" onClick={() => navigate(`/editnote/${id}`)}>Editar</button>
         <button className="btn btn-error"onClick={() => setShowConfirmModal(true)}>Eliminar</button>
         </div>
     </div>
